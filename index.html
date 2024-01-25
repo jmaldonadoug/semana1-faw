@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 1 - 19004628</title>
+</head>
+<style>
+    body {
+        background-color: aquamarine;
+    }
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+
+    .div1 {
+        grid-area: 1 / 1 / 2 / 4;
+    }
+
+    .div2 {
+        grid-area: 1 / 4 / 2 / 7;
+    }
+
+    .div3 {
+        grid-area: 2 / 1 / 3 / 3;
+    }
+
+    .div4 {
+        grid-area: 2 / 3 / 3 / 5;
+    }
+
+    .div5 {
+        grid-area: 2 / 5 / 3 / 7;
+    }
+</style>
+
+<body>
+    <div class="parent">
+        <div class="div1"> </div>
+        <div class="div2"> </div>
+        <div class="div3"> </div>
+        <div class="div4"> </div>
+        <div class="div5"> </div>
+    </div>
+</body>
+
+</html>
