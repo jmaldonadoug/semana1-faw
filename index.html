@@ -7,46 +7,188 @@
     <title>Tarea 1 - 19004628</title>
 </head>
 <style>
+    html,
     body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
         background-color: aquamarine;
+        box-sizing: border-box;
     }
 
-    .parent {
+    #parent {
+        height: 100%;
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        padding: 5%;
+        box-sizing: border-box;
     }
 
-    .div1 {
+    .box {
+        background-color: white;
+        padding: 50px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #div1 {
         grid-area: 1 / 1 / 2 / 4;
     }
 
-    .div2 {
+    .flip-container {
+        perspective: 1000px;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .front,
+    .back {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .front {
+        z-index: 2;
+    }
+
+    .back {
+        transform: rotateY(180deg);
+    }
+
+    .flip-container:hover .flipper {
+        transform: rotateY(180deg);
+    }
+
+    .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    #div2 {
         grid-area: 1 / 4 / 2 / 7;
+        display: flex;
+        flex-direction: column;
     }
 
-    .div3 {
+    #div3 {
         grid-area: 2 / 1 / 3 / 3;
+        display: flex;
+        flex-direction: column;
     }
 
-    .div4 {
+    #div4 {
         grid-area: 2 / 3 / 3 / 5;
+        display: flex;
+        flex-direction: column;
     }
 
-    .div5 {
+    #div5 {
         grid-area: 2 / 5 / 3 / 7;
+        display: flex;
+        flex-direction: column;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
     }
 </style>
 
 <body>
-    <div class="parent">
-        <div class="div1"> </div>
-        <div class="div2"> </div>
-        <div class="div3"> </div>
-        <div class="div4"> </div>
-        <div class="div5"> </div>
+    <div id="parent">
+        <div id="div1" class="box">
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="https://picsum.photos/200?id=1" alt="Adelante">
+                    </div>
+                    <div class="back">
+                        <img src="https://picsum.photos/200?id=2" alt="Atras">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <span>Jonatan Valentin Maldonado Gonzalez</span>
+                <span>Edad: XX</span>
+                <span>Sexo: Masculino</span>
+                <span>Altura: 1.75 m</span>
+            </div>
+        </div>
+        <div id="div2" class="box">
+            <h2>Ingenieria en Sistemas</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a mauris rutrum, tempor arcu ac,
+                convallis mauris. Suspendisse et felis et augue ultricies malesuada. Maecenas viverra sem in turpis
+                tristique pulvinar. Nam consectetur ex in nulla varius suscipit. Sed feugiat, urna sollicitudin
+                efficitur commodo, magna nulla pharetra orci, sit amet tincidunt metus justo eget nisi. Nam ac efficitur
+                lectus. Etiam ex sem, sodales quis consequat ac, ullamcorper ac orci. Sed dictum lorem in tellus
+                egestas, eu semper nisl sodales. Etiam volutpat, quam at egestas pellentesque, justo lacus volutpat
+                enim, non maximus lacus nunc quis dolor. Mauris volutpat massa finibus dolor ullamcorper dapibus.</p>
+        </div>
+        <div id="div3" class="box">
+            <h2>Libros</h2>
+            <ul>
+                <li>Libro 1</li>
+                <li>Libro 2</li>
+                <li>Libro 3</li>
+                <li>Libro 4</li>
+                <li>Libro 5</li>
+            </ul>
+        </div>
+        <div id="div4" class="box">
+            <h2>Hobbies</h2>
+            <ul>
+                <li>Hobbie 1</li>
+                <li>Hobbie 2</li>
+                <li>Hobbie 3</li>
+                <li>Hobbie 4</li>
+                <li>Hobbie 5</li>
+            </ul>
+        </div>
+        <div id="div5" class="box">
+            <h2>Sitios web</h2>
+            <table>
+                <tr>
+                    <th>Sitio</th>
+                    <th>Nombre</th>
+                    <th>Puntaje</th>
+                </tr>
+                <tr>
+                    <td><a href="https://google.com/">https://google.com</a></td>
+                    <td>Google</td>
+                    <td>★★★★★</td>
+                </tr>
+                <tr>
+                    <td><a href="https://github.com/">https://github.com</a></td>
+                    <td>GitHub</td>
+                    <td>★★★★☆</td>
+                </tr>
+                <tr>
+                    <td><a href="https://ges.galileo.edu/dotlrn/control-panel">https://ges.galileo.edu</a></td>
+                    <td>GES</td>
+                    <td>★★★☆☆</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 
